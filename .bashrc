@@ -8,7 +8,7 @@ PS1='\w\$ '
 
 alias vim=nvim
 alias t='tmux -f $HOME/dotfiles/.tmux.conf'
-alias tk'tmux kill-server"
+alias tk='tmux kill-server'
 
 eval "$(starship init bash)"
 
