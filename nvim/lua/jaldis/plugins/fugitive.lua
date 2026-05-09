@@ -1,0 +1,6 @@
+vim.keymap.set("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
+vim.keymap.set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" })
+vim.keymap.set("n", "<leader>gpl", "<cmd>Git pull<CR>", { desc = "Git pull" })
+vim.keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<CR>", { desc = "Git diff" })
+vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
