@@ -1,0 +1,80 @@
+# ~/.config/starship.toml
+
+# Prompt format: order of modules
+format = "$directory$git_branch$git_status$nodejs$python$rust$c$c++$zig$golang$tmux$time$character"
+
+# Current working directory
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+style = "bold blue"
+read_only = " "
+
+# Git branch
+[git_branch]
+symbol = "🌱 "
+style = "bold green"
+
+# Git status
+[git_status]
+conflicted = "⚔️ "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+staged = "++${count}"
+modified = "!${count}"
+untracked = "?${count}"
+style = "bold red"
+
+# Node.js
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+
+# Python
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+
+# Rust
+[rust]
+symbol = "🦀 "
+style = "bold red"
+
+# C
+[c]
+symbol = "C "
+style = "bold blue"
+commands = ["cc", "gcc", "clang"]
+
+# C++
+[c++]
+symbol = "C++ "
+style = "bold cyan"
+commands = ["c++", "g++", "clang++"]
+
+# Zig
+[zig]
+symbol = "⚡ "
+style = "bold yellow"
+
+# Go
+[golang]
+symbol = "🐹 "
+style = "bold cyan"
+
+# tmux indicator
+[tmux]
+symbol = "🖥️ "
+style = "bold purple"
+
+# Time
+[time]
+disabled = false
+format = "🕒 %T"
+style = "bold purple"
+
+# Prompt character
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+

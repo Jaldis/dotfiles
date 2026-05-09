@@ -8,6 +8,9 @@ PS1='\w\$ '
 
 alias vim=nvim
 
+eval "$(starship init bash)"
+
+
 case $- in
     *i*) ;;
       *) return;;
