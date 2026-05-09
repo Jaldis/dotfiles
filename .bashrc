@@ -133,5 +133,5 @@ function nvimlazy() {
 
 alias t='tmux -f $HOME/dotfiles/.tmux.conf'
 
-cd ~
+cd $HOME
 
