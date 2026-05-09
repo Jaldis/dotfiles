@@ -7,6 +7,8 @@
 PS1='\w\$ '
 
 alias vim=nvim
+alias t='tmux -f $HOME/dotfiles/.tmux.conf'
+alias tk'tmux kill-server"
 
 eval "$(starship init bash)"
 
@@ -134,7 +136,6 @@ function nvimlazy() {
     export XDG_CONFIG_HOME=~/.config
 }
 
-alias t='tmux -f $HOME/dotfiles/.tmux.conf'
 
 cd $HOME
 

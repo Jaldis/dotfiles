@@ -1,0 +1,55 @@
+# --- Sensitive files ---
+*.key
+*.pem
+*.p12
+*.asc
+*.gpg
+*.kdbx
+*.sqlite
+
+# --- SSH / GPG ---
+.ssh/
+.gnupg/
+
+# --- Secrets / tokens ---
+.env
+.env.*
+.netrc
+.aws/
+.azure/
+.gcloud/
+.kube/
+
+# --- OS / machine-specific ---
+.DS_Store
+Thumbs.db
+.cache/
+.local/
+.history
+.npm/
+.node_repl_history
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# --- Package managers ---
+node_modules/
+vendor/
+target/
+dist/
+build/
+
+# --- Logs ---
+*.log
+*.out
+*.err
+
+# --- Temporary ---
+tmp/
+*.tmp
+
+
