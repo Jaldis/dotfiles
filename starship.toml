@@ -5,7 +5,7 @@ format = "$directory$git_branch$git_status$nodejs$python$rust$c$c++$zig$golang$t
 
 # Current working directory
 [directory]
-truncation_length = 3
+truncation_length = 0
 truncate_to_repo = false
 style = "bold blue"
 read_only = " "
