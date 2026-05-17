@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
 end
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd", "rust_analyzer", "zls", "gopls", "bashls" },
+	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd", "rust_analyzer", "zls", "gopls", "bashls", "marksman" },
 	handlers = {
 		function(server_name)
 			vim.lsp.config(server_name, {

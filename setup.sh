@@ -83,6 +83,10 @@ echo "Symlinking ~/.tmux.conf -> $DOTFILES_ROOT/.tmux.conf"
 rm -rf "$HOME/.tmux.conf"
 ln -s "$DOTFILES_ROOT/.tmux.conf" "$HOME/.tmux.conf"
 
+echo "Symlinking ~/.gitconfig -> $DOTFILES_ROOT/.gitconfig"
+rm -rf "$HOME/.gitconfig"
+ln -s "$DOTFILES_ROOT/.gitconfig" "$HOME/.gitconfig"
+
 echo ""
 echo "=== Setup Complete ==="
 echo ""
