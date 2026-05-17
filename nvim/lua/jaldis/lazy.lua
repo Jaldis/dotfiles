@@ -128,4 +128,11 @@ require("lazy").setup({
             require("jaldis.plugins.toggleterm")
         end,
     },
+    {
+        "numToStr/Comment.nvim",
+        config = function()
+            require("jaldis.plugins.comment")
+        end,
+    }
+
 })

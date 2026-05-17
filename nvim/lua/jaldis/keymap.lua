@@ -18,7 +18,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- File explorer
 vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Open file explorer" })
-vim.keymap.set("n", "Y", "0y$", { desc = "Yank the first character up to the last character" })
+vim.keymap.set("n", "1", "^", { desc = "Yank the first character up to the last character" })
+vim.keymap.set("n", "0", "$", { desc = "Go to the first character of a line" })
+vim.keymap.set("n", "Y", "^y$", { desc = "Got to the last character of a line" })
 
 vim.keymap.set("n", "<leader>li", vim.cmd.LspInfo, { desc = "LSP info" })
 
