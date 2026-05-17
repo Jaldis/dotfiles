@@ -89,3 +89,6 @@ echo "  :MasonInstall lua_ls pyright tsserver clangd rust_analyzer zls gopls"
 echo ""
 echo "Install Treesitter parsers:"
 echo "  :TSInstall c cpp rust go zig lua python typescript"
+
+
+

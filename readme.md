@@ -1,4 +1,4 @@
-## Jaldis Neovim Configuration
+##212 e Jaldis Neovim Configuration
 
 Minimal Neovim configuration built with **lazy.nvim**, featuring LSP, autocompletion, fuzzy finding, and more.
 
