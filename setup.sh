@@ -11,18 +11,22 @@ NVIM_VERSION="0.10.0"
 echo "[1/7] Installing system dependencies..."
 if command -v apt-get &> /dev/null; then
     sudo apt-get update
-    sudo apt-get install -y build-essential gcc g++ make unzip curl git ripgrep fd clangd
+    sudo apt-get install -y build-essential gcc g++ make unzip curl git ripgrep fd clangd tmux
 elif command -v pacman &> /dev/null; then
-    sudo pacman -Sy --noconfirm base-devel gcc make unzip git ripgrep fd clang
+    sudo pacman -Sy --noconfirm base-devel gcc make unzip git ripgrep fd clang tmux
 elif command -v brew &> /dev/null; then
-    brew install gcc make unzip git ripgrep fd clangd
+    brew install gcc make unzip git ripgrep fd clangd tmux
 fi
+
+echo "Git version: $(git --version)"
+echo "Tmux version: $(tmux -V)"
+
+echo "Installing languages"
 
 echo "[2/7] Installing Go..."
 if ! command -v go &> /dev/null; then
     curl -sL "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz" | sudo tar -C /usr/local -xz
 fi
-export PATH=$PATH:/usr/local/go/bin
 echo "Go version: $(go version)"
 
 echo "[3/7] Installing gopls..."
@@ -74,6 +78,10 @@ echo "Symlinking ~/.zshrc -> $DOTFILES_ROOT/zsh/zshrc"
 mkdir -p "$HOME/.config/zsh"
 rm -rf "$HOME/.zshrc"
 ln -s "$DOTFILES_ROOT/zsh/zshrc" "$HOME/.zshrc"
+
+echo "Symlinking ~/.tmux.conf -> $DOTFILES_ROOT/.tmux.conf"
+rm -rf "$HOME/.tmux.conf"
+ln -s "$DOTFILES_ROOT/.tmux.conf" "$HOME/.tmux.conf"
 
 echo ""
 echo "=== Setup Complete ==="
