@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 end
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd" },
+	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd", "rust_analyzer", "zls", "gopls" },
 	handlers = {
 		function(server_name)
 			require("lspconfig")[server_name].setup({

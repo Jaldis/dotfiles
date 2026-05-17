@@ -6,9 +6,6 @@
 
 PS1='\w\$ '
 
-alias vim=nvim
-alias t='tmux -f $HOME/dotfiles/.tmux.conf'
-alias tk='tmux kill-server'
 
 eval "$(starship init bash)"
 
@@ -28,8 +25,7 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
+# check the window size after each command and, if necessary,alias ll='ls -lah --group-directories-first'alias ll='ls -lah --group-directories-first'alias ll='ls -lah --group-directories-first'
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
@@ -107,8 +103,8 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/dotfiles/.bash_aliases ]; then
+    . $HOME/dotfiles/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -130,6 +126,14 @@ export XDG_CONFIG_HOME=$HOME/dotfiles
 
 function nvimconf() {
     cd $HOME/dotfiles/nvim
+}
+
+function dotfiles() {
+    cd $HOME/dotfiles
+}
+
+reload_bashrc() {
+    source $HOME/dotfiles/.bashrc
 }
 
 function nvimlazy() {
