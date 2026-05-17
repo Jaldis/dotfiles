@@ -1,0 +1,15 @@
+nvimconf() {
+    cd $HOME/dotfiles/nvim
+}
+
+dotfiles() {
+    cd $HOME/dotfiles
+}
+
+reload_bashrc() {
+    source $HOME/dotfiles/bash/bashrc
+}
+
+nvimlazy() {
+    export XDG_CONFIG_HOME=~/.config
+}
