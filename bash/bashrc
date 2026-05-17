@@ -62,6 +62,5 @@ fi
 export PATH=/home/jaldis/.opencode/bin:$PATH
 . "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/zig
-export XDG_CONFIG_HOME=$HOME/dotfiles
 
 cd $HOME
