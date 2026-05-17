@@ -6,18 +6,21 @@ Minimal Neovim configuration built with **lazy.nvim**, featuring LSP, autocomple
 
 ### Required
 
-- **Neovim** >= 0.9
+- **Neovim** >= 0.10
 - **Git**
 - **make** / **gcc**
 - **Node.js** >= 18
 - **npm**
-- unzip (for mason)
+- **unzip** (for mason)
 
 ### Recommended (for optimal plugin functionality)
 
 - **ripgrep** — Required for Telescope `live_grep`
 - **fd** — Faster file searching for Telescope
 - **lazygit** — Complements Fugitive for terminal Git workflow
+- **Go** >= 1.21 — For gopls
+- **Rust** — For rust_analyzer
+- **Clang** — For clangd
 
 ### LSP Servers
 
@@ -25,10 +28,48 @@ Installed automatically via **Mason** (`:Mason`):
 - `lua_ls`
 - `pyright`
 - `tsserver`
+- `clangd`
+- `rust_analyzer`
+- `zls`
+- `gopls`
 
 Ensure language runtimes are available on your system:
 - **Python 3** (for pyright)
 - **Node.js** (for tsserver)
+- **Go** (for gopls)
+
+#### Installing Go and gopls
+
+```bash
+# Install Go
+curl -sL https://go.dev/dl/go1.21.0.linux-amd64.tar.gz | sudo tar -C /usr/local -xz
+export PATH=$PATH:/usr/local/go/bin
+
+# Install gopls
+go install golang.org/x/tools/cmd/gopls@latest
+
+# Add Go bin to PATH (add to ~/.bashrc or ~/.zshrc)
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+
+#### Installing rust_analyzer
+
+```bash
+# Via rustup
+rustup component add rust-analyzer
+
+# Or via Mason (`:MasonInstall rust_analyzer`)
+```
+
+#### Installing clangd
+
+```bash
+# Debian/Ubuntu
+sudo apt install clangd
+
+# Arch Linux
+sudo pacman -S clang
+```
 
 ## Installation
 
@@ -67,11 +108,14 @@ lua/
     └── plugins/
         ├── cmp.lua        # Autocompletion
         ├── copilot.lua    # GitHub Copilot
+        ├── dracula.lua    # Theme
         ├── fugitive.lua   # Git integration
         ├── harpoon.lua    # File navigation
+        ├── lspconfig.lua  # LSP config loader
         ├── luasnip.lua    # Snippet engine
         ├── mason.lua      # LSP management + keymaps
         ├── telescope.lua  # Fuzzy finder
+        ├── toggleterm.lua # Terminal
         ├── treesitter.lua # Syntax highlighting
         └── undotree.lua   # Undo history
 
