@@ -58,6 +58,20 @@ require("lazy").setup({
         end,
     },
     {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("lsp_signature").setup({
+                bind = true,
+                handler_opts = {
+                    border = "rounded",
+                },
+                hint_prefix = "",
+                transparency = 15,
+            })
+        end,
+    },
+    {
         "williamboman/mason.nvim",
         config = function()
             require("jaldis.plugins.mason")
@@ -69,7 +83,14 @@ require("lazy").setup({
     },
     {
         "neovim/nvim-lspconfig",
-        after = { "mason-lspconfig.nvim" },
+        lazy = false,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        lazy = false,
+        config = function()
+            require("jaldis.plugins.lspconfig")
+        end,
     },
     {
         "L3MON4D3/LuaSnip",

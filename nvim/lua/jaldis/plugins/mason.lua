@@ -1,8 +1,9 @@
 require("mason").setup()
 
-local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), require("cmp_nvim_lsp").default_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(client, bufnr)
+	vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to declaration" })
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Go to implementation" })
@@ -20,13 +21,20 @@ local on_attach = function(client, bufnr)
 end
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd", "rust_analyzer", "zls", "gopls" },
+	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd", "rust_analyzer", "zls", 'gopls' },
 	handlers = {
 		function(server_name)
-			require("lspconfig")[server_name].setup({
+			vim.lsp.config(server_name, {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 		end,
 	},
 })
+
+if vim.fn.executable("gopls") == 1 then
+	vim.lsp.config("gopls", {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+end
