@@ -20,6 +20,7 @@ The `setup.sh` script automates the installation of all dependencies and languag
 | **git** | Version control |
 | ripgrep | Fast text search |
 | fd | Fast file finder |
+| fzf | Fuzzy finder (used by telescope) |
 | clangd | C/C++ language server |
 | **tmux** | Terminal multiplexer |
 
@@ -34,6 +35,29 @@ The `setup.sh` script automates the installation of all dependencies and languag
 | clippy | latest | Rust linter |
 | Zig | 0.13.0 | Zig programming language |
 | Neovim | 0.10.0 | Text editor |
+
+## Installing fzf
+
+On Debian/Ubuntu:
+```bash
+sudo apt-get install fzf
+```
+
+On Arch:
+```bash
+sudo pacman -S fzf
+```
+
+On macOS:
+```bash
+brew install fzf
+```
+
+Alternatively, use the git repo for the latest version:
+```bash
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
 
 ### Dotfiles Symlinks
 

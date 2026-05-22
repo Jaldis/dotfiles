@@ -32,10 +32,18 @@ telescope.setup({
     },
     pickers = {
         find_files = {
-            previewer = true, -- show preview for files
+            previewer = true,
         },
         buffers = {
-            previewer = true, -- show preview for buffers
+            previewer = true,
+        },
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
         },
     },
 })
