@@ -20,3 +20,8 @@ zf() {
   "$@" "$selected"            # run whatever CLI you pass as arguments
 }
 
+zd() {
+  local dir
+  dir=$(find . -type d | fzf) || return
+  "$@" "$dir"
+}
