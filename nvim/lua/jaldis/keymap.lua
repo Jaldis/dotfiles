@@ -29,8 +29,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move block up" })
 vim.keymap.set("n", "<leader>li", vim.cmd.LspInfo, { desc = "LSP info" })
 
 -- Navivation between split panes
-vim.keymap.set("n", "<C-h>", "<C-w>w", { desc = "Move to left split" })
-vim.keymap.set("n", "<C-l>", "<C-w>b", { desc = "Move to right split" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper split" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower split" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+vim.keymap.set("n", "<C-k>", "<C-k>", { desc = "Move to upper split" })
+vim.keymap.set("n", "<C-j>", "<C-j>", { desc = "Move to lower split" })
 
