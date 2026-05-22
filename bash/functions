@@ -13,3 +13,10 @@ reload_bashrc() {
 nvimlazy() {
     export XDG_CONFIG_HOME=~/.config
 }
+
+zf() {
+  local selected
+  selected=$(fzf) || return   # run fzf, quit if nothing selected
+  "$@" "$selected"            # run whatever CLI you pass as arguments
+}
+
