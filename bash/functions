@@ -23,5 +23,6 @@ zf() {
 zd() {
   local dir
   dir=$(find . -type d | fzf) || return
-  "$@" "$dir"
+  cd "$dir"
+  "$@" .
 }

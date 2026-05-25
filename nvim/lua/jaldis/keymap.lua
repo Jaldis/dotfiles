@@ -18,9 +18,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- File explorer
 vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Open file explorer" })
-vim.keymap.set("n", "1", "^", { desc = "Yank the first character up to the last character" })
-vim.keymap.set("n", "0", "$", { desc = "Go to the first character of a line" })
-vim.keymap.set("n", "Y", "^y$", { desc = "Got to the last character of a line" })
+
+-- start and end of line navigation
+--vim.keymap.set("n", "H", "^", { desc = "Yank the first character up to the last character" })
+--vim.keymap.set("n", "L", "$", { desc = "Go to the first character of a line" })
+vim.keymap.set("n", "Y", "^y$", { desc = "Copy the start of a non blank charater of a line up to the end of character of the line" })
 
 -- Move highlighted text up/down in Visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move block down" })
