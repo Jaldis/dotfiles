@@ -59,12 +59,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=/home/jaldis/.opencode/bin:$PATH
-. "$HOME/.cargo/env"
-export PATH=$PATH:/usr/local/zig
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:\
+/home/jaldis/.opencode/bin:\
+$HOME/.cargo/bin:\
+/usr/local/zig:\
+/usr/local/go/bin:\
+$(go env GOPATH)/bin:\
+$HOME/.local/bin
 
 
 
