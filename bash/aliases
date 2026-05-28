@@ -5,3 +5,6 @@ alias tl='tmux list-sessions'
 alias ll='ls -lah --group-directories-first'
 alias cls='clear'
 alias z='fzf'
+alias pl='echo $PATH | tr ":" "\n"'
+
+

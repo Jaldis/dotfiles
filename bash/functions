@@ -1,5 +1,5 @@
 reload_bashrc() {
-    source $HOME/dotfiles/bash/bashrc
+    source $HOME/dotfiles/.bashrc
 }
 
 zf() {
