@@ -12,6 +12,6 @@ function _G.lsp_attached()
   table.sort(names)
   return ' ' .. table.concat(names, ',')
 end
-vim.opt.statusline = "%f %y %m %=" .. "LSP: %{v:lua.lsp_attached()}" .. " %l:%c"
+vim.opt.statusline = "%f %y %m %=" .. "LSP:%{v:lua.lsp_attached()}" .. " %l:%c"
 
 
