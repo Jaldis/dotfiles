@@ -80,6 +80,33 @@ cd ~/.dotfiles
 ./setup.sh
 ```
 
+## GPG Key Backup & Restore
+
+### Backup
+
+List your GPG secret keys and export them:
+
+```bash
+gpg --list-secret-keys --keyid-format LONG
+gpg --export-secret-keys --armor YOUR_KEY_ID > gpg-secret-keys.asc
+gpg --export-ownertrust > gpg-ownertrust.txt
+```
+
+### Restore
+
+```bash
+gpg --import gpg-secret-keys.asc
+gpg --import-ownertrust gpg-ownertrust.txt
+```
+
+### Using pass
+
+If you use `pass` as your password manager, also back up `~/.password-store`:
+
+```bash
+tar czf pass-store-backup.tar.gz ~/.password-store
+```
+
 ## Post-Install Steps
 
 After running setup.sh, initialize Neovim plugins and language servers:
