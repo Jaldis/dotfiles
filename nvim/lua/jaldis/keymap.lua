@@ -34,7 +34,7 @@ vim.keymap.set("n", "<leader>li", vim.cmd.LspInfo, { desc = "LSP info" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
 vim.keymap.set("n", "<C-k>", "<C-k>", { desc = "Move to upper split" })
-vim.keymap.set("n", "<C-j>", "<C-j>", { desc = "Move to lower split" })
+        vim.keymap.set("n", "<C-j>", "<C-j>", { desc = "Move to lower split" })
 
 
 
