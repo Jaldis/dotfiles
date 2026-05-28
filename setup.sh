@@ -11,11 +11,11 @@ NVIM_VERSION="0.10.0"
 echo "[1/7] Installing system dependencies..."
 if command -v apt-get &> /dev/null; then
     sudo apt-get update
-    sudo apt-get install -y build-essential gcc g++ make unzip curl git ripgrep fd clangd tmux
+    sudo apt-get install -y build-essential gcc g++ make unzip curl git ripgrep fd clangd tmux pass gnupg
 elif command -v pacman &> /dev/null; then
-    sudo pacman -Sy --noconfirm base-devel gcc make unzip git ripgrep fd clang tmux
+    sudo pacman -Sy --noconfirm base-devel gcc make unzip git ripgrep fd clang tmux pass gnupg
 elif command -v brew &> /dev/null; then
-    brew install gcc make unzip git ripgrep fd clangd tmux
+    brew install gcc make unzip git ripgrep fd clangd tmux pass gnupg
 fi
 
 echo "Git version: $(git --version)"

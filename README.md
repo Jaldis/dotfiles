@@ -23,6 +23,8 @@ The `setup.sh` script automates the installation of all dependencies and languag
 | fzf | Fuzzy finder (used by telescope) |
 | clangd | C/C++ language server |
 | **tmux** | Terminal multiplexer |
+| **pass** | Password manager |
+| **gpg** | Encryption & signing |
 
 ### Languages & Tools
 
