@@ -1,18 +1,7 @@
-nvimconf() {
-    cd $HOME/dotfiles/nvim
-}
-
-dotfiles() {
-    cd $HOME/dotfiles
-}
-
 reload_bashrc() {
     source $HOME/dotfiles/bash/bashrc
 }
 
-nvimlazy() {
-    export XDG_CONFIG_HOME=~/.config
-}
 
 zf() {
   local selected
@@ -25,4 +14,10 @@ zd() {
   dir=$(find . -type d | fzf) || return
   cd "$dir"
   "$@" .
+}
+
+zcd() {
+  local dir
+  dir=$(find . -type d 2>/dev/null | fzf) || return
+  cd "$dir"
 }

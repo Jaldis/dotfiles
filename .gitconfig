@@ -2,4 +2,4 @@
 	email = atienzajaldis@gmail.com
 	name = Jaldis
 [credential]
-	helper = store
+	helper = manager-core
