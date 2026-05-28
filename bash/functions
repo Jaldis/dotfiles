@@ -2,7 +2,6 @@ reload_bashrc() {
     source $HOME/dotfiles/bash/bashrc
 }
 
-
 zf() {
   local selected
   selected=$(fzf) || return   # run fzf, quit if nothing selected
@@ -20,4 +19,8 @@ zcd() {
   local dir
   dir=$(find . -type d 2>/dev/null | fzf) || return
   cd "$dir"
+}
+
+git_cc() {
+    git config --global credential.helper manager-core
 }
