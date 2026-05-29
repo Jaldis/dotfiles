@@ -24,3 +24,7 @@ zcd() {
 git_cc() {
     git config --global credential.helper manager-core
 }
+
+gacp() {
+    git add . && git commit -m "$1" && git push origin main
+}

@@ -1,3 +1,13 @@
+export EDITOR=nvim
+export VISUAL=nvim
+export PAGER=less
+export LESS=-FRX
+export BROWSER=firefox
+
+export HISTTIMEFORMAT='%F %T '
+
+export FZF_DEFAULT_OPTS='--height 40% --border --inline-info'
+
 export PATH=$PATH:\
 /home/jaldis/.opencode/bin:\
 $HOME/.cargo/bin:\

@@ -21,3 +21,36 @@ vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<CR>", { desc = "Git add file" 
 vim.keymap.set("n", "<leader>gA", "<cmd>Git add .<CR>", { desc = "Git add all" })
 vim.keymap.set("n", "<leader>g-", "<cmd>Gread<CR>", { desc = "Git restore file" })
 vim.keymap.set("n", "<leader>g_", "<cmd>Gwrite<CR>", { desc = "Git stage file" })
+
+local float_group = vim.api.nvim_create_augroup("FugitiveFloat", { clear = true })
+
+local function float_window()
+  if vim.api.nvim_win_get_config(0).relative ~= "" then
+    return
+  end
+
+  local buf = vim.api.nvim_get_current_buf()
+  local orig_win = vim.api.nvim_get_current_win()
+  local width = math.floor(vim.o.columns * 0.8)
+  local height = math.floor(vim.o.lines * 0.8)
+
+  vim.api.nvim_open_win(buf, true, {
+    relative = "editor",
+    width = width,
+    height = height,
+    row = math.floor((vim.o.lines - height) / 2),
+    col = math.floor((vim.o.columns - width) / 2),
+    style = "minimal",
+    border = "rounded",
+  })
+
+  if vim.api.nvim_win_is_valid(orig_win) then
+    vim.api.nvim_win_close(orig_win, true)
+  end
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = float_group,
+  pattern = { "fugitive", "fugitiveblame", "gitcommit", "gitrebase" },
+  callback = float_window,
+})

@@ -8,3 +8,5 @@ alias z='fzf'
 alias pl='echo $PATH | tr ":" "\n"'
 
 
+
+
