@@ -1,9 +1,9 @@
 
 function _G.lsp_attached()
-  local clients = vim.lsp.buf_get_clients(0)
-  if not next(clients) then return '' end
+  local clients = vim.lsp.get_clients({ bufnr = 0 })
+  if #clients == 0 then return '' end
   local names = {}
-  for _, client in pairs(clients) do
+  for _, client in ipairs(clients) do
     local can_format = client.server_capabilities.documentFormattingProvider
                      or client.server_capabilities.documentRangeFormattingProvider
     local tag = can_format and '[F]' or ''

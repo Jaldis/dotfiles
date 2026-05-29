@@ -84,10 +84,6 @@ require("lazy").setup({
     {
         "neovim/nvim-lspconfig",
         lazy = false,
-    },
-    {
-        "neovim/nvim-lspconfig",
-        lazy = false,
         config = function()
             require("jaldis.plugins.lspconfig")
         end,

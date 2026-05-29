@@ -29,5 +29,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "tsserver", "clangd", "rust_analyzer", "zls", "gopls", "bashls", "marksman" },
+	ensure_installed = { "lua_ls", "pyright", "ts_ls", "clangd", "rust_analyzer", "zls", "gopls", "bashls", "marksman" },
 })
