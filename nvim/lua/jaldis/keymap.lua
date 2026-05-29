@@ -19,9 +19,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- File explorer
 vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Open file explorer" })
 
--- start and end of line navigation
---vim.keymap.set("n", "H", "^", { desc = "Yank the first character up to the last character" })
---vim.keymap.set("n", "L", "$", { desc = "Go to the first character of a line" })
+-- yank
 vim.keymap.set("n", "Y", "^y$",
     { desc = "Copy the start of a non blank charater of a line up to the end of character of the line" })
 
