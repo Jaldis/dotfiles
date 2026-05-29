@@ -21,8 +21,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.backup = false
 vim.opt.swapfile = false
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.inccommand = "split"
 vim.opt.updatetime = 50
 
 vim.g.netrw_banner = 0

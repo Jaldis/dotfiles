@@ -22,7 +22,8 @@ vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Open file explorer" })
 -- start and end of line navigation
 --vim.keymap.set("n", "H", "^", { desc = "Yank the first character up to the last character" })
 --vim.keymap.set("n", "L", "$", { desc = "Go to the first character of a line" })
-vim.keymap.set("n", "Y", "^y$", { desc = "Copy the start of a non blank charater of a line up to the end of character of the line" })
+vim.keymap.set("n", "Y", "^y$",
+    { desc = "Copy the start of a non blank charater of a line up to the end of character of the line" })
 
 -- Move highlighted text up/down in Visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move block down" })
@@ -34,7 +35,12 @@ vim.keymap.set("n", "<leader>li", vim.cmd.LspInfo, { desc = "LSP info" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
 vim.keymap.set("n", "<C-k>", "<C-k>", { desc = "Move to upper split" })
-        vim.keymap.set("n", "<C-j>", "<C-j>", { desc = "Move to lower split" })
+vim.keymap.set("n", "<C-j>", "<C-j>", { desc = "Move to lower split" })
 
 
-
+-- search
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "*", "*zzzv")
+vim.keymap.set("n", "*", "#zzzv")
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><left><Left>]],
+    { desc = "Replace word under cursor" })
