@@ -118,13 +118,6 @@ require("lazy").setup({
         end,
     },
     {
-        "akinsho/toggleterm.nvim",
-        version = "*",
-        config = function()
-            require("jaldis.plugins.toggleterm")
-        end,
-    },
-    {
         "numToStr/Comment.nvim",
         config = function()
             require("jaldis.plugins.comment")
