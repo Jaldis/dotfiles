@@ -30,6 +30,9 @@ vim.opt.updatetime = 50
 
 vim.g.netrw_banner = 0
 
+vim.lsp.inlay_hint.enable(false)
+vim.lsp.handlers["textDocument/inlayHint"] = function() end
+
 require("jaldis.keymap")
 require("jaldis.lazy")
 require("jaldis.plugins.statusline")
